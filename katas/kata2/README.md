@@ -31,3 +31,5 @@ A password is considered strong if below conditions are all met:
     - Temporary `char` element to make the three letter comparision.
 3. Make the comparisions to know if the string turns true the upper, lower and digits variables.
 4. Return the expected value.
+
+The running time of this solution is `O(n)` since I only used one loop.

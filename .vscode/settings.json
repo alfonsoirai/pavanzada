@@ -1,5 +1,26 @@
 {
     "files.associations": {
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "chrono": "c",
+        "map": "c",
+        "set": "c",
+        "__locale": "c",
+        "memory": "c",
+        "utility": "c",
+        "__bit_reference": "c",
+        "__functional_base": "c",
+        "algorithm": "c",
+        "atomic": "c",
+        "bitset": "c",
+        "deque": "c",
+        "functional": "c",
+        "iterator": "c",
+        "limits": "c",
+        "locale": "c",
+        "ratio": "c",
+        "system_error": "c",
+        "tuple": "c",
+        "type_traits": "c",
+        "vector": "c"
     }
 }

@@ -55,3 +55,14 @@ Case #2: 150796.447372310
 Case #3: 43982.297150257
 Case #4: 625.176938064
 ```
+
+## Breakdown
+`N` = Available pancakes
+`K` = Pancakes ordered
+`R` = Pancake radius
+`H` = Pancake height
+`T` = Number of tests
+
+
+## Solution
+

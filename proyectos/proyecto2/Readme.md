@@ -63,6 +63,42 @@ Case #4: 625.176938064
 `H` = Pancake height
 `T` = Number of tests
 
+*Limits*
+- 1 ≤ T ≤ 100.
+- 1 ≤ K ≤ N.
+- 1 ≤ Ri ≤ 106, for all i.
+- 1 ≤ Hi ≤ 106, for all i.
 
 ## Solution
+1. In order to solve the problem, we declare the variables of the available pancakes and the ordered ones as an `int`.
+Also, two integer arrays for the Radius of the pancakes and another one for the Height of them.
 
+2. I'll declare some variables, one for the answer, and another one for the current pancake. However, in oirder to get the info correctly, I'll need to focus on how to get the area of the pancakes. For that, I'll be using the `acos()` function.
+
+3. In my `ample()` function, I'll be solving the problem. For that will be necessary to implement a couple of for loops. The first one will make sure the scans stay less than the number of available pancakes.
+
+4. The other for loop, will be the code in charge to "try" the bottom pancakes and from that, give us the solution to the problem.
+```
+int k;
+    for(int i = 0; i < N; i++){
+        current = (long long)R[i] * R[i] + 2LL * R[i] * H[i];
+        for(int j=0, k=0; j< K; k++){
+            if(i==k){
+                continue;
+            }
+            current += 2LL * R[k] * H[k];
+            j++;
+        }
+        if(answer < current){
+            answer = current;
+        }
+    }
+    printf("%.9f\n", answer*acos(-1));
+```
+
+Complexity: `O(n^2)`
+
+## Makefile
+```
+make run
+```

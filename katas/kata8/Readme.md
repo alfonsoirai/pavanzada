@@ -9,4 +9,10 @@ When building your function:
 - Don't make your users watch the same movie twice.
 - Optimize for runtime over memory.
 
-   
+## Breakdown
+- The two movies length need to be equal to the `flight_length`.
+    - This means that for a first movie given, we need a second one that is equal to first movie length - flight length.
+- Need to check each movie and treat it like the first one, from that, check if theres another one that is equal to the operation.
+- We could use two nested loops to check all of the elements or maybe implement a hash.
+- Maybe implement it using sets.
+    - Using a set to store all of the `movie_lengths`. The other one, with `first_movie_lengths`.

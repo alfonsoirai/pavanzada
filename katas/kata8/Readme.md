@@ -16,3 +16,7 @@ When building your function:
 - We could use two nested loops to check all of the elements or maybe implement a hash.
 - Maybe implement it using sets.
     - Using a set to store all of the `movie_lengths`. The other one, with `first_movie_lengths`.
+- Users won't watch the movie twice.
+
+## Solution
+- We pass through all the movie lengths and treat them as a the first movie length.

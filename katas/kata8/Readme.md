@@ -19,4 +19,9 @@ When building your function:
 - Users won't watch the movie twice.
 
 ## Solution
-- We pass through all the movie lengths and treat them as a the first movie length.
+- We pass through all the movie lengths and treat them as a the first movie length. At each iteration, we see if there's a `matching_second_movie_length` we've seen already (stored in our `movie_lengths_seen` set) that is equal to `flight_length - first_movie_length`. If there is, we short-circuit and return True.
+Keep our movie_lengths_seen set up to date by throwing in the current first_movie_length.
+
+The complexity may be a `O(n)O(n)`.
+
+The complexity of the solution implementing a Hash is `O(n)`.

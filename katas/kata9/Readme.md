@@ -7,7 +7,13 @@ For n-bytes character, the first n-bits are all one's, the n+1 bit is 0, followe
 
 This is how the UTF-8 encoding would work:
 ```
- Char. number range  |        UTF-8 octet sequence        (hexadecimal)    |              (binary)     --------------------+---------------------------------------------     0000 0000-0000 007F | 0xxxxxxx     0000 0080-0000 07FF | 110xxxxx 10xxxxxx     0000 0800-0000 FFFF | 1110xxxx 10xxxxxx 10xxxxxx     0001 0000-0010 FFFF | 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx  
+ Char. number range  |        UTF-8 octet sequence       
+    (hexadecimal)    |              (binary)     
+ --------------------+---------------------------------------------     
+ 0000 0000-0000 007F | 0xxxxxxx     
+ 0000 0080-0000 07FF | 110xxxxx 10xxxxxx     
+ 0000 0800-0000 FFFF | 1110xxxx 10xxxxxx 10xxxxxx     
+ 0001 0000-0010 FFFF | 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx  
 ```
 Given an array of integers representing the data, return whether it is a valid utf-8 encoding.
 
@@ -22,3 +28,37 @@ data = [197, 130, 1], which represents the octet sequence: 11000101 10000010 000
 ```
 data = [235, 140, 4], which represented the octet sequence: 11101011 10001100 00000100.    Return false.  The first 3 bits are all one's and the 4th bit is 0 means it is a 3-bytes character.  The next byte is a continuation byte which starts with 10 and that's correct.  But the second continuation byte does not start with 10, so it is invalid.
 ```
+
+## Breakdown
+- 0-127 = 0000 0000 - 0111 1111
+- We receive an array of integers
+- An integers is equal to a chain of 8 bits
+- 10..... can't be alone
+- 110.... needs to be followed by 1 
+- 1110...
+- 0 can be alone, 1 byte char
+
+## Solution
+- Get all the input array's.
+- Variables:
+    - Counter `int`
+    - isUTF `boolean`
+- Visit all the integers in the array
+- Check that the item is between 0-255
+- If the count = 0
+    - Check if the item is between 192-223
+        - Count + 1
+    - Check if the item is between 224-239
+        - Count + 2
+    - Check if the item is between 240-255
+        - Count + 3
+    - Check if the item is between 128-191
+        - Return `false`
+- If the count =! 0
+    - Check if the item is between 128-191
+        Count --
+    - Else
+        Return False
+- In case that after the loop if the count variable it is not 0, it means a byte is missing. Must return false.
+
+Complexity: `O(n)`

@@ -45,3 +45,9 @@ Example case 1. F(1, 1) = A[1] = 1, F(2, 2) = A[2] = 2 and F(1, 2) = A[1] XOR A[
 6. In this new `for` loop, there will be a maximum of 32 runs to keep the 32 bits manipulation. Also, declare a new variable `p` that will let us assign a left shift with the current `i` value of the loop.
 7. Inside another `for` loop, we make an if statement comparing with a binary AND operator the `p` value and the array position in `j`, if it's true, we add one to the variable where we are storing the number of 1's.
 8. Finally, the result will be accumulating the number of ones * (n+1-number of ones)*p. 
+
+## Make Commands
+```
+make run
+make clear
+```

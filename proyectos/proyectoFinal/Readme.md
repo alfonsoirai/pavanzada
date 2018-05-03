@@ -40,7 +40,7 @@ Example case 1. F(1, 1) = A[1] = 1, F(2, 2) = A[2] = 2 and F(1, 2) = A[1] XOR A[
 3. Inside the loop, we ask for the value of `n` which will be the size of the array.
     - After that, we create a new array of size `n`
     - Also, declare a variable that will store the previous value, starting at 0.
-4. Inside the `while` loop, I will place a `for` loop to store all the respective values in their respective array position.
+4. Inside the `while` loop, I will place a `for` loop to store all the respective values in their respective array position executing a Binary XOR operation between the previous value and the temporary value that was the one entered by the user.
 5. After that `for`, I'll declare some new variables to store the result and the number of 1's that will result of the convertion after the XOR.
 6. In this new `for` loop, there will be a maximum of 32 runs to keep the 32 bits manipulation. Also, declare a new variable `p` that will let us assign a left shift with the current `i` value of the loop.
 7. Inside another `for` loop, we make an if statement comparing with a binary AND operator the `p` value and the array position in `j`, if it's true, we add one to the variable where we are storing the number of 1's.

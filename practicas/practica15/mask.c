@@ -7,7 +7,7 @@ typedef structs{
 } Flags;
 
 int main(){
-	Flags status;
+	Flags status;	
 	status.f = 0b110;
 
 	if ((status.f & (MASK_FULL | MASK_DELETE) ) != 0)
